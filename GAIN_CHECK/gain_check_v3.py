@@ -18,7 +18,7 @@ nocolor 			= "\033[0m"
 print(chr(27) + "[2J")
 print("--------------------------------------------------------------------------------")
 print(blue + "SCRIPT  gain_check_v3.py" + nocolor)
-print(blue + "VERSION 3.1" + nocolor)
+print(blue + "VERSION 3.2" + nocolor)
 print(blue + "AUTHOR  b1n9" + nocolor)
 print("--------------------------------------------------------------------------------")
 print("goal of this tool is to help you chooose a static gain setting that maximizes")
@@ -41,7 +41,7 @@ print("-------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 # 3.0
 # 	initial
-# 3.1 (pending)
+# 3.1
 # 	fix distance min
 # 	save original value or gain and restore
 #	additional starting notes for users
@@ -55,6 +55,9 @@ print("-------------------------------------------------------------------------
 # 		add color highlight at end for each column best on the table
 # 	keep aircraft distance between all passes (started distances array but not finished)
 # 	add seconds while receiving gain info
+# 3.2
+# 	not detecting minimums correctly
+# 	not counting distance msgs correctly
 # ----------------------------------------------------------------------------------------------------------------------
 # POSSIBLE FUTURE IMPROVEMENTS
 # 	SCRIPT CONTROL
@@ -319,6 +322,7 @@ for p in range(pass_number):
 				distance_max = d
 			if d < distance_min and d > 0:
 				distance_min = d
+		for d in aircraft_distances: 
 			if d >= 0 and d < 10:
 				distance_000_010 +=1
 			if d >= 0 and d < 50:
@@ -474,7 +478,7 @@ for m in ['MSGS\nTYPE_2\nGND_POS','MSGS\nTYPE_3\nAIR_POS']:
 for m in ['DIST\nMIN']:
 	column_name 		= m
 	column_list 		= list(table.columns[column_name])
-	column_min 			= max(column_list)
+	column_min 			= min(column_list)
 	column_min_index 	= column_list.index(min(column_list))
 	column_update 		= green + str(column_min) + nocolor
 	if column_max > 0:
@@ -565,4 +569,3 @@ print("-------------------------------------------------------------------------
 print("FINISHED")
 print("SECS SCRIPT TOTAL    ", round(time.time() - script_time_start,2))
 print("--------------------------------------------------------------------------------")
-
