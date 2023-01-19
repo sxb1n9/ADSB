@@ -2,7 +2,7 @@
 ADSB Tools and Scripts for PIAWARE, FLIGHTAWARE, ADSBEXCHANGE, RADARBOX
 
 ## GAIN_CHECK VERSION 3.2
-![Screenshot](https://raw.githubusercontent.com/sxb1n9/ADSB/main/GAIN_CHECK/SCREENSHOTS/gain_check_v3_finished.png)
+![Screenshot](https://raw.githubusercontent.com/sxb1n9/ADSB/main/GAIN_CHECK/SCREENSHOTS/gain_check_v3.2.png)
 gain_check_v3 will help you determine the correct static gain to use for your ADSB station
 ### INSTALL
 sudo apt install python3.10
