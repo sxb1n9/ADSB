@@ -69,6 +69,15 @@ print("-------------------------------------------------------------------------
 # 		count < -3db signals if we can get rssi
 # 		rssi sections like distance
 # 		rssi min max
+# 	RANKING
+#		best        teal    +2
+#		top 5%      blue    +1
+#		middle		norm	0
+# 		bottom 5%   pink    -1
+# 		worst       red     -2
+# 	settings for ranking top and bottom percentages
+# 	display gain ranking numbers 
+#	display colored table and ranking at end of each pass and don't clear right away 
 # ----------------------------------------------------------------------------------------------------------------------
 # I personally run this in 5 passes with 10s durations first then verify with another run of 5 passes of 62s intervals
 # 	RUN 1: passes 5, duration 10, gain gain_setp_5
