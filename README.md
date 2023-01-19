@@ -7,7 +7,7 @@ gain_check_v3 will help you determine the correct static gain to use for your AD
 ### INSTALL
 sudo apt install python3.10
 sudo pip3 install beautifultables
-copy script to machine
+copy script to machine configure and run
 ### CONFIGURATION
 sudo nano gain_check_v3.py 
 ### RUN
